@@ -54,7 +54,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         //lbl_text = findViewById(R.id.lbl_movie_details);
         //lbl_text.setText(movie_id);
-        //cek
+        //cek cek
 
     }
 
