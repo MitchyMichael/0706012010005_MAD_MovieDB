@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MovieDB</string>
+    <string name="img">img</string>
+    <string name="title">title</string>
+    <string name="subtitle">subtitle</string>
+    <string name="description">description</string>
+</resources>
