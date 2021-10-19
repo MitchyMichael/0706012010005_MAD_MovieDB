@@ -16,11 +16,8 @@ import com.bumptech.glide.Glide;
 import com.progtechuc.moviedb.R;
 import com.progtechuc.moviedb.helper.Const;
 import com.progtechuc.moviedb.model.NowPlaying;
-import com.progtechuc.moviedb.view.MainActivity;
-import com.progtechuc.moviedb.view.MovieDetailsActivity;
-import com.progtechuc.moviedb.view.NowPlayingActivity;
+import com.progtechuc.moviedb.view.activities.MovieDetailsActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.CardViewViewHolder> {
