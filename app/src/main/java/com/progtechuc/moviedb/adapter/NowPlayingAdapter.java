@@ -54,9 +54,9 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Ca
                 .load(Const.IMG_URL + results.getPoster_path())
                 .into(holder.img_poster);
 
-        holder.cv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        holder.cv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 //                Intent intent = new Intent(context, MovieDetailsActivity.class);
 //                intent.putExtra("movie_id", "" + results.getId());
 //                intent.putExtra("movie_title", "" + results.getTitle());
@@ -67,13 +67,13 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Ca
 //
 //                context.startActivity(intent);
 
-                Bundle bundle = new Bundle();
-                bundle.putString("movieId", "" + results.getId());
-                Navigation.findNavController(view).navigate(R.id.
-                        action_nowPlayingFragment_to_movieDetailsFragment, bundle);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("movieId", "" + results.getId());
+//                Navigation.findNavController(view).navigate(R.id.
+//                        action_nowPlayingFragment_to_movieDetailsFragment, bundle);
 
-            }
-        });
+//            }
+//        });
     }
 
     @Override

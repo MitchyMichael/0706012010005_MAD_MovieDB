@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.progtechuc.moviedb.R;
 import com.progtechuc.moviedb.adapter.NowPlayingAdapter;
+import com.progtechuc.moviedb.helper.ItemClickSupport;
 import com.progtechuc.moviedb.model.NowPlaying;
 import com.progtechuc.moviedb.view.activities.NowPlayingActivity;
 import com.progtechuc.moviedb.viewmodel.MovieViewModel;
@@ -89,6 +91,38 @@ public class NowPlayingFragment extends Fragment {
             NowPlayingAdapter adapter = new NowPlayingAdapter(getActivity());
             adapter.setListNowPlaying(nowPlaying.getResults());
             rv_now_playing.setAdapter(adapter);
+
+//            ItemClickSupport.addTo(rv_now_playing).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
+//                @Override
+//                public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
+//                    return false;
+//                }
+//            });
+
+            ItemClickSupport.addTo(rv_now_playing).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+                @Override
+                public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("movieId", String.valueOf(nowPlaying.getResults().get(position).getId()));
+                    bundle.putString("movie_title", String.valueOf(nowPlaying.getResults().get(position).getTitle()));
+                    bundle.putString("movie_description", String.valueOf(nowPlaying.getResults().get(position).getOverview()));
+                    bundle.putString("movie_date", String.valueOf(nowPlaying.getResults().get(position).getRelease_date()));
+                    bundle.putString("movie_popularity", String.valueOf(nowPlaying.getResults().get(position).getPopularity()));
+                    bundle.putString("movie_originalLanguage", String.valueOf(nowPlaying.getResults().get(position).getOriginal_language()));
+
+
+                //                intent.putExtra("movie_id", "" + results.getId());
+//                intent.putExtra("movie_title", "" + results.getTitle());
+//                intent.putExtra("movie_description", "" + results.getOverview());
+//                intent.putExtra("movie_date", "" + results.getRelease_date());
+//                intent.putExtra("movie_popularity", "" + results.getPopularity());
+//                intent.putExtra("movie_originalLanguage", "" + results.getOriginal_language());
+
+
+                    Navigation.findNavController(v).navigate(R.id.
+                            action_nowPlayingFragment_to_movieDetailsFragment, bundle);
+                }
+            });
         }
     };
 }
