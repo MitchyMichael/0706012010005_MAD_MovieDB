@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import com.progtechuc.moviedb.R;
 import com.progtechuc.moviedb.adapter.NowPlayingAdapter;
 import com.progtechuc.moviedb.helper.ItemClickSupport;
+import com.progtechuc.moviedb.model.Movies;
 import com.progtechuc.moviedb.model.NowPlaying;
 import com.progtechuc.moviedb.view.activities.NowPlayingActivity;
 import com.progtechuc.moviedb.viewmodel.MovieViewModel;
@@ -81,6 +82,8 @@ public class NowPlayingFragment extends Fragment {
         view_Model.getNowPlaying();
         view_Model.getResultNowPlaying().observe(getActivity(), showNowPlaying);
 
+        
+
         return view;
     }
 
@@ -109,6 +112,10 @@ public class NowPlayingFragment extends Fragment {
                     bundle.putString("movie_date", String.valueOf(nowPlaying.getResults().get(position).getRelease_date()));
                     bundle.putString("movie_popularity", String.valueOf(nowPlaying.getResults().get(position).getPopularity()));
                     bundle.putString("movie_originalLanguage", String.valueOf(nowPlaying.getResults().get(position).getOriginal_language()));
+                    bundle.putString("movie_backdrop", String.valueOf(nowPlaying.getResults().get(position).getBackdrop_path()));
+                    bundle.putString("movie_voteAverage", String.valueOf(nowPlaying.getResults().get(position).getVote_average()));
+                    bundle.putString("movie_vote", String.valueOf(nowPlaying.getResults().get(position).getVote_count()));
+
 
 
                 //                intent.putExtra("movie_id", "" + results.getId());

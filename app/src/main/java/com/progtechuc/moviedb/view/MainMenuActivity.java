@@ -28,9 +28,13 @@ public class MainMenuActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar_main_menu);
         setSupportActionBar(toolbar);
+
+
+
         bottomNavigationView = findViewById(R.id.bottom_nav_main_menu);
         navHostFragment = (NavHostFragment) getSupportFragmentManager().
                 findFragmentById(R.id.nav_fragment_main_menu);
+
 
         //Ini dihapus kalau tidak pakai action bar ----------------------------------------
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.
