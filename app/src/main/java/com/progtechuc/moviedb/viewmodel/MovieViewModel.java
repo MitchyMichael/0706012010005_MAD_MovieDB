@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.progtechuc.moviedb.model.Movies;
 import com.progtechuc.moviedb.model.NowPlaying;
+import com.progtechuc.moviedb.model.Popular;
 import com.progtechuc.moviedb.model.UpComing;
 import com.progtechuc.moviedb.repositories.MovieRepository;
 
@@ -54,6 +55,18 @@ public class MovieViewModel extends AndroidViewModel {
         return resultGetUpComing;
     }
     //== End of viewmodel get up coming
+
+
+
+    //== Begin of viewmodel get popular
+    private MutableLiveData<Popular> resultGetPopular = new MutableLiveData<>();
+    public void getPopular(){
+        resultGetPopular = repository.getPopularData();
+    }
+    public LiveData<Popular> getResultPopular(){
+        return resultGetPopular;
+    }
+    //== End of viewmodel get popular
 
 
 

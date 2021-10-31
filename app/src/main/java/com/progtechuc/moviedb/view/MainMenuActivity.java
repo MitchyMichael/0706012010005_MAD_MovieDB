@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,9 +37,11 @@ public class MainMenuActivity extends AppCompatActivity {
                 findFragmentById(R.id.nav_fragment_main_menu);
 
 
+
+
         //Ini dihapus kalau tidak pakai action bar ----------------------------------------
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.
-                Builder(R.id.nowPlayingFragment, R.id.upComingFragment).build();
+                Builder(R.id.nowPlayingFragment, R.id.upComingFragment, R.id.popularFragment).build();
 
         NavigationUI.setupActionBarWithNavController(MainMenuActivity.this,
                 navHostFragment.getNavController(), appBarConfiguration);

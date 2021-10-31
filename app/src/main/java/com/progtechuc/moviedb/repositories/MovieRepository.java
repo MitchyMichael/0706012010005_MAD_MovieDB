@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.progtechuc.moviedb.helper.Const;
 import com.progtechuc.moviedb.model.Movies;
 import com.progtechuc.moviedb.model.NowPlaying;
+import com.progtechuc.moviedb.model.Popular;
 import com.progtechuc.moviedb.model.UpComing;
 import com.progtechuc.moviedb.retrofit.ApiService;
 
@@ -72,6 +73,24 @@ public class MovieRepository {
 
             @Override
             public void onFailure(Call<UpComing> call, Throwable t) {
+
+            }
+        });
+
+        return result;
+    }
+
+    public MutableLiveData<Popular> getPopularData(){
+        final MutableLiveData<Popular> result = new MutableLiveData<>();
+
+        ApiService.endpoint().getPopular(Const.API_KEY).enqueue(new Callback<Popular>() {
+            @Override
+            public void onResponse(Call<Popular> call, Response<Popular> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Popular> call, Throwable t) {
 
             }
         });

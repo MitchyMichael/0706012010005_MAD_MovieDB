@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/drawable/gradient_background.xml" value="0.2703125" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2703125" />
+        <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.2703125" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/drawable/ic_up_coming_24.xml" value="0.2703125" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/drawable/round_corner.xml" value="0.2703125" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/activity_loading_dialog.xml" value="0.25416666666666665" />
@@ -14,11 +15,13 @@
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/activity_now_playing.xml" value="0.25416666666666665" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/card_now_playing.xml" value="0.4" />
+        <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/card_popular.xml" value="0.21510416666666668" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/card_production_companies.xml" value="0.264" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/card_up_coming.xml" value="0.1" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/custom_dialog.xml" value="0.5361328125" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/fragment_movie_details.xml" value="0.4" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/fragment_now_playing.xml" value="0.25416666666666665" />
+        <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/fragment_popular.xml" value="0.21510416666666668" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/fragment_up_coming.xml" value="0.25416666666666665" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/layout/progress_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Universitas Ciputra/Mata Kuliah/Semester 3/Mobile App Dev/Week 4/Week4_app/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
