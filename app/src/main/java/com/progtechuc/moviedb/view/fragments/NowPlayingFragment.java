@@ -16,9 +16,7 @@ import android.view.ViewGroup;
 import com.progtechuc.moviedb.R;
 import com.progtechuc.moviedb.adapter.NowPlayingAdapter;
 import com.progtechuc.moviedb.helper.ItemClickSupport;
-import com.progtechuc.moviedb.model.Movies;
 import com.progtechuc.moviedb.model.NowPlaying;
-import com.progtechuc.moviedb.view.activities.NowPlayingActivity;
 import com.progtechuc.moviedb.viewmodel.MovieViewModel;
 
 /**
@@ -70,6 +68,8 @@ public class NowPlayingFragment extends Fragment {
 
     private RecyclerView rv_now_playing;
     private MovieViewModel view_Model;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -128,6 +128,7 @@ public class NowPlayingFragment extends Fragment {
 
                     Navigation.findNavController(v).navigate(R.id.
                             action_nowPlayingFragment_to_movieDetailsFragment, bundle);
+
                 }
             });
         }

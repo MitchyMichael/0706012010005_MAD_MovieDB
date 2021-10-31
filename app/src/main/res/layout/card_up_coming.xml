@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cons_card_nowplaying"
+    android:id="@+id/cons_card_upcoming"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/Goldd">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_card_nowplaying"
+        android:id="@+id/cv_card_upcoming"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -23,13 +23,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cons_cv_card_nowplaying"
+            android:id="@+id/cons_cv_card_upcoming"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white">
 
             <ImageView
-                android:id="@+id/img_poster_nowplaying"
+                android:id="@+id/img_poster_upcoming"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/lbl_title_card_nowplaying"
+                android:id="@+id/lbl_title_card_upcoming"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -54,31 +54,31 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/img_poster_nowplaying"
-                app:layout_constraintTop_toTopOf="@+id/img_poster_nowplaying" />
+                app:layout_constraintStart_toEndOf="@+id/img_poster_upcoming"
+                app:layout_constraintTop_toTopOf="@+id/img_poster_upcoming" />
 
             <TextView
-                android:id="@+id/lbl_overview_card_nowplaying"
+                android:id="@+id/lbl_overview_card_upcoming"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:maxLines="2"
                 android:text="@string/subtitle"
                 android:textColor="@color/grey"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_title_card_nowplaying"
-                app:layout_constraintStart_toStartOf="@+id/lbl_title_card_nowplaying"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_title_card_nowplaying" />
+                app:layout_constraintEnd_toEndOf="@+id/lbl_title_card_upcoming"
+                app:layout_constraintStart_toStartOf="@+id/lbl_title_card_upcoming"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title_card_upcoming" />
 
             <TextView
-                android:id="@+id/lbl_releasedate_card_nowplaying"
+                android:id="@+id/lbl_releasedate_card_upcoming"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/subtitle"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_poster_nowplaying"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_overview_card_nowplaying"
-                app:layout_constraintStart_toStartOf="@+id/lbl_overview_card_nowplaying" />
+                app:layout_constraintBottom_toBottomOf="@+id/img_poster_upcoming"
+                app:layout_constraintEnd_toEndOf="@+id/lbl_overview_card_upcoming"
+                app:layout_constraintStart_toStartOf="@+id/lbl_overview_card_upcoming" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

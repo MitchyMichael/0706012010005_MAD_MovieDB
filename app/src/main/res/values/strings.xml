@@ -11,4 +11,6 @@
     <string name="movie_details">Movie Details</string>
     <string name="moviedescription">Movie Description:</string>
     <string name="MovieDB">MovieDB</string>
+    <string name="productionCompany">Production Company:</string>
+    <string name="loading">Loading...</string>
 </resources>

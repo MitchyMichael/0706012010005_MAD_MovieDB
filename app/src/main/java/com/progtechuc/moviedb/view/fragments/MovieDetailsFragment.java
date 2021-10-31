@@ -12,11 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.progtechuc.moviedb.R;
+import com.progtechuc.moviedb.adapter.CompanyAdapter;
+import com.progtechuc.moviedb.adapter.NowPlayingAdapter;
 import com.progtechuc.moviedb.helper.Const;
+import com.progtechuc.moviedb.helper.ItemClickSupport;
 import com.progtechuc.moviedb.model.Movies;
 import com.progtechuc.moviedb.view.activities.MovieDetailsActivity;
 import com.progtechuc.moviedb.viewmodel.MovieViewModel;
@@ -75,9 +80,11 @@ public class MovieDetailsFragment extends Fragment {
             textView_date_moviedetails, textView_popularity_moviedetails,
             textView_originalLanguage_moviedetails, textView_voteAvg_moviedetails,
             textView_tagline_moviedetails, textView_vote_moviedetails, textView_genre_moviedetails;
-    private ImageView img_poster_moviedetails, img_backdrop_moviedetails;
+    private ImageView img_poster_moviedetails, img_backdrop_moviedetails, imageView_company_moviedetails;
     private MovieViewModel movieViewModel;
     private RecyclerView rv_movieCompany_moviedetails;
+
+
 
 
 
@@ -88,15 +95,23 @@ public class MovieDetailsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_movie_details, container, false);
 
+        rv_movieCompany_moviedetails = view.findViewById(R.id.rv_movieCompany_moviedetails);
+        movieViewModel = new ViewModelProvider(getActivity()).get(MovieViewModel.class);
+        String movieIdCompany = getArguments().getString("movieId");
+        movieViewModel.getMovieById(movieIdCompany);
+        movieViewModel.getResultGetMovieById().observe(getActivity(), showCompany);
+
+
+
 //        lbl_movie_id = view.findViewById(R.id.lbl_movie_id_movie_details_fragment);
 //
 //        String movieId = getArguments().getString("movieId");
 //        lbl_movie_id.setText(movieId);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
-
-        rv_movieCompany_moviedetails = view.findViewById(R.id.rv_movieCompany_moviedetails);
-        rv_movieCompany_moviedetails.setLayoutManager(layoutManager);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+//
+//        rv_movieCompany_moviedetails = view.findViewById(R.id.rv_movieCompany_moviedetails);
+//        rv_movieCompany_moviedetails.setLayoutManager(layoutManager);
 
 
         movieViewModel = new ViewModelProvider(getActivity()).get(MovieViewModel.class);
@@ -121,6 +136,9 @@ public class MovieDetailsFragment extends Fragment {
 
 
 
+
+
+
         img_poster_moviedetails = view.findViewById(R.id.img_poster_moviedetails);
         img_backdrop_moviedetails = view.findViewById(R.id.img_backdrop_moviedetails);
 
@@ -133,6 +151,8 @@ public class MovieDetailsFragment extends Fragment {
         textView_tagline_moviedetails = view.findViewById(R.id.textView_tagline_moviedetails);
         textView_vote_moviedetails = view.findViewById(R.id.textView_vote_moviedetails);
         textView_genre_moviedetails = view.findViewById(R.id.textView_genre_moviedetails);
+        imageView_company_moviedetails = view.findViewById(R.id.imageView_company_moviedetails);
+
 
         textView_title_moviedetails.setText(getArguments().getString("movie_title"));
         textView_description_moviedetails.setText(getArguments().getString("movie_description"));
@@ -147,6 +167,32 @@ public class MovieDetailsFragment extends Fragment {
         return view;
     }
 
+
+    private Observer<Movies> showCompany = new Observer<Movies>() {
+
+
+
+        @Override
+        public void onChanged(Movies movies) {
+
+            List<Movies.ProductionCompanies> productionCompaniesList = movies.getProduction_companies();
+
+            LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+
+            CompanyAdapter adapter = new CompanyAdapter(getActivity());
+            adapter.setListProductionCompanies(movies.getProduction_companies());
+            rv_movieCompany_moviedetails.setAdapter(adapter);
+            rv_movieCompany_moviedetails.setLayoutManager(layoutManager);
+
+            ItemClickSupport.addTo(rv_movieCompany_moviedetails).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+                @Override
+                public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                    String name = productionCompaniesList.get(position).getName();
+                    Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    };
 
     private Observer<Movies> showMovieGenre = new Observer<Movies>() {
 
