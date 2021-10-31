@@ -9,6 +9,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,7 @@ public class NowPlayingFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -128,6 +130,8 @@ public class NowPlayingFragment extends Fragment {
 
                     Navigation.findNavController(v).navigate(R.id.
                             action_nowPlayingFragment_to_movieDetailsFragment, bundle);
+
+
 
                 }
             });

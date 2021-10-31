@@ -22,6 +22,7 @@ import com.progtechuc.moviedb.adapter.CompanyAdapter;
 import com.progtechuc.moviedb.adapter.NowPlayingAdapter;
 import com.progtechuc.moviedb.helper.Const;
 import com.progtechuc.moviedb.helper.ItemClickSupport;
+import com.progtechuc.moviedb.helper.Loading;
 import com.progtechuc.moviedb.model.Movies;
 import com.progtechuc.moviedb.view.activities.MovieDetailsActivity;
 import com.progtechuc.moviedb.viewmodel.MovieViewModel;
@@ -83,6 +84,7 @@ public class MovieDetailsFragment extends Fragment {
     private ImageView img_poster_moviedetails, img_backdrop_moviedetails, imageView_company_moviedetails;
     private MovieViewModel movieViewModel;
     private RecyclerView rv_movieCompany_moviedetails;
+    private Loading loading;
 
 
 
@@ -112,6 +114,9 @@ public class MovieDetailsFragment extends Fragment {
 //
 //        rv_movieCompany_moviedetails = view.findViewById(R.id.rv_movieCompany_moviedetails);
 //        rv_movieCompany_moviedetails.setLayoutManager(layoutManager);
+
+        loading = new Loading(getActivity());
+        loading.startProgress();
 
 
         movieViewModel = new ViewModelProvider(getActivity()).get(MovieViewModel.class);
@@ -254,6 +259,9 @@ public class MovieDetailsFragment extends Fragment {
             } else {
 
             }
+            loading.stopProgress();
         }
     };
+
+
 }
